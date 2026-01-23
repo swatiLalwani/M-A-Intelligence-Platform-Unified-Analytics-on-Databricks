@@ -52,13 +52,16 @@ Functions Covered:
 * Stockout Risk Monitoring
 
 🔑 Key Performance Insights
+
 1️⃣ Revenue Synergy
 * A major revenue peak in December ($21.77B) confirms successful consolidation of year-end sales from both companies.
 * Indicates strong seasonal alignment post-acquisition.
+
 2️⃣ Channel Opportunity
 * Retailers contribute 78.26% of total revenue.
 * Direct + E-Commerce currently sit at 20%.
 * Sportsbar’s startup-driven digital model provides a clear blueprint to accelerate AtliQon’s DTC growth.
+
 3️⃣ Product Performance
 * Traditional sports equipment (Cricket / Football) dominates revenue share.
 * Nutrition & Energy Bars show high growth potential but remain underpenetrated.
