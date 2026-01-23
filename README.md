@@ -1,10 +1,14 @@
 🏟️ AtliQon × Sportsbar — M&A Intelligence Platform
+
 📌 Project Overview
+
 This project simulates a post-merger analytics platform built on the Databricks Lakehouse, designed to help executives and business stakeholders analyze performance after AtliQon (a global consumer sports equipment company) acquires Sportsbar (a fast-growing sports nutrition startup).
 The platform enables Finance, Sales, Marketing, Operations, and Executive leadership to access a single source of truth and answer critical post-acquisition questions around revenue synergy, channel performance, product mix, and operational efficiency.
 
 🎯 Business Objective
+
 Enable leadership to:
+
 * Measure post-merger revenue synergies
 * Compare channel and product performance across both companies
 * Identify cross-sell and growth opportunities
@@ -12,8 +16,11 @@ Enable leadership to:
 * Support data-driven strategic decisions with executive-ready dashboards
 
 🏭 Domain & Function Coverage
+
 Domain: Consumer Goods (Sports Equipment & Nutrition)
+
 Functions Covered:
+
 * Finance
 * Sales
 * Marketing
@@ -22,12 +29,14 @@ Functions Covered:
 
 
 🧱 Architecture (Databricks Lakehouse)
+
 * Bronze Layer: Raw transactional, customer, product, and channel data from both AtliQon and Sportsbar
 * Silver Layer: Cleaned, standardized, and conformed datasets
 * Gold Layer: Business-ready fact tables powering stakeholder dashboards
 * Orchestration: Automated pipelines for daily refresh and integration logic
 
 📊 Dashboards & Stakeholders
+
 👔 Executive Dashboard
 * Consolidated Revenue
 * Month-over-Month Growth
