@@ -43,26 +43,36 @@ Functions Covered:
 * Channel Mix Post-Merger
 * High-Level Synergy KPIs
 
+https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Executive%20Dashboard.pdf
+
 💰 Finance Dashboard
 * Revenue Trends
 * Channel Contribution
 * Product Profitability (simulated)
 * Seasonal Peaks & Risks
 
+https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Finance%20Dashboard.pdf
+
 📈 Sales Dashboard
 * Channel Performance (Retail, Direct, E-Commerce)
 * Key Customers & Revenue Concentration
 * Cross-Sell Opportunities
+
+https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Sales%20Dashboard.pdf
 
 📣 Marketing Dashboard
 * New vs Returning Customers
 * Customer Acquisition Trends
 * Loyalty & Retention Signals
 
+https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Marketing%20Dashboard.pdf
+
 🚚 Operations Dashboard
 * Inventory Distribution
 * Warehouse Optimization Signals
 * Stockout Risk Monitoring
+
+https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Operations%20Dashboard.pdf
 
 🔑 Key Performance Insights
 
