@@ -57,14 +57,14 @@ This makes the project relevant for Data Analyst, Business Analyst, and Financia
 * Indicates strong seasonal alignment post-acquisition.
 2️⃣ Channel Opportunity
 * Retailers contribute 78.26% of total revenue.
-* Direct + E-Commerce currently sit at ~20%.
+* Direct + E-Commerce currently sit at 20%.
 * Sportsbar’s startup-driven digital model provides a clear blueprint to accelerate AtliQon’s DTC growth.
 3️⃣ Product Performance
 * Traditional sports equipment (Cricket / Football) dominates revenue share.
 * Nutrition & Energy Bars show high growth potential but remain underpenetrated.
 * Strong cross-sell opportunity with existing FitnessWorld and Amazon customers.
 
-🚀 Strategic Recommendations (2026)
+🚀 Strategic Recommendations 
 🔹 Inventory Cross-Optimization
 Identify warehouses where AtliQon equipment and Sportsbar nutrition products can be co-located to reduce last-mile shipping costs and improve delivery speed.
 🔹 Customer Loyalty Integration
@@ -80,8 +80,5 @@ Expand the orchestrated pipeline to include real-time low-stock alerts across bo
 * Business-first insight generation
 * Cross-functional data modeling
 
-
-⭐ Why This Project Matters
-This project demonstrates the ability to think beyond dashboards — combining business context, domain knowledge, and technical execution to solve realistic problems faced by modern data teams after mergers and acquisitions.
 
 
