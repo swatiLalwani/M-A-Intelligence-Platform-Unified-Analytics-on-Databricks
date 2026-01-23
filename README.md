@@ -81,11 +81,17 @@ Functions Covered:
 * Strong cross-sell opportunity with existing FitnessWorld and Amazon customers.
 
 🚀 Strategic Recommendations 
+
 🔹 Inventory Cross-Optimization
+
 Identify warehouses where AtliQon equipment and Sportsbar nutrition products can be co-located to reduce last-mile shipping costs and improve delivery speed.
+
 🔹 Customer Loyalty Integration
+
 Leverage the 66% New Customer rate from Marketing analytics to launch an “Athlete” Loyalty Program, rewarding customers who purchase across both equipment and nutrition categories.
+
 🔹 Process Automation
+
 Expand the orchestrated pipeline to include real-time low-stock alerts across both companies, preventing stockouts during high-demand post-merger periods.
 
 🧠 Skills Demonstrated
