@@ -19,7 +19,7 @@ Functions Covered:
 * Marketing
 * Operations / Supply Chain
 * Executive Strategy
-This makes the project relevant for Data Analyst, Business Analyst, and Financial Analyst roles across consumer goods, fintech, and tech-driven organizations.
+
 
 🧱 Architecture (Databricks Lakehouse)
 * Bronze Layer: Raw transactional, customer, product, and channel data from both AtliQon and Sportsbar
