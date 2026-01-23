@@ -42,19 +42,23 @@ Functions Covered:
 * Month-over-Month Growth
 * Channel Mix Post-Merger
 * High-Level Synergy KPIs
+
 💰 Finance Dashboard
 * Revenue Trends
 * Channel Contribution
 * Product Profitability (simulated)
 * Seasonal Peaks & Risks
+
 📈 Sales Dashboard
 * Channel Performance (Retail, Direct, E-Commerce)
 * Key Customers & Revenue Concentration
 * Cross-Sell Opportunities
+
 📣 Marketing Dashboard
 * New vs Returning Customers
 * Customer Acquisition Trends
 * Loyalty & Retention Signals
+
 🚚 Operations Dashboard
 * Inventory Distribution
 * Warehouse Optimization Signals
