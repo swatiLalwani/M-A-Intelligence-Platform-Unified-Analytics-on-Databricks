@@ -66,27 +66,27 @@ Functions Covered:
 * Key Customers & Revenue Concentration
 * Cross-Sell Opportunities
 
-https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Sales%20Dashboard.pdf
+<img src="Dashboards/Screenshots/Screenshot 6.png" width="900">
 
-Dashboards/Screenshots/Screenshot 3.png
+[View full dashboard (PDF)](Dashboards/AtliQon%20Sales%20Dashboard.pdf)
 
 📣 **Marketing Dashboard**
 * New vs Returning Customers
 * Customer Acquisition Trends
 * Loyalty & Retention Signals
 
-https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Marketing%20Dashboard.pdf
+<img src="Dashboards/Screenshots/Screenshot 3.png" width="900">
 
-Dashboards/Screenshots/Screenshot 4.png
+[View full dashboard (PDF)](Dashboards/AtliQon%20Marketing%20Dashboard.pdf)
 
 🚚 **Operations Dashboard**
 * Inventory Distribution
 * Warehouse Optimization Signals
 * Stockout Risk Monitoring
 
-https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Operations%20Dashboard.pdf
+<img src="Dashboards/Screenshots/Screenshot 4.png" width="900">
 
-Dashboards/Screenshots/Screenshot 6.png
+[View full dashboard (PDF)](Dashboards/AtliQon%20Operations%20Dashboard.pdf)
 
 🔑 Key Insights
 
