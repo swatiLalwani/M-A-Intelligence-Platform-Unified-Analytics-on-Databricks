@@ -57,9 +57,9 @@ Functions Covered:
 * Product Profitability (simulated)
 * Seasonal Peaks & Risks
 
-https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Finance%20Dashboard.pdf
+<img src="Dashboards/Screenshots/Screenshot2 .png" width="900">
 
-Dashboards/Screenshots/Screenshot 2.png
+[View full dashboard (PDF)](Dashboards/AtliQon%20Finance%20Dashboard.pdf)
 
 📈 **Sales Dashboard**
 * Channel Performance (Retail, Direct, E-Commerce)
