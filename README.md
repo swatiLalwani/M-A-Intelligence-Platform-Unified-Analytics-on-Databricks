@@ -45,7 +45,7 @@ Functions Covered:
 - Channel Mix Post-Merger
 - High-Level Synergy KPIs
 
-<img src="Dashboards/Screenshots/Screenshot1.png" width="900">
+<img src="Dashboards/Screenshots/Screenshot1 .png" width="900">
 
 [View full dashboard (PDF)](Dashboards/AtliQon%20Executive%20Dashboard.pdf)
 
