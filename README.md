@@ -38,14 +38,17 @@ Functions Covered:
 📊 **Dashboards & Stakeholders**
 
 👔 **Executive Dashboard**
-* Consolidated Revenue
-* Month-over-Month Growth
-* Channel Mix Post-Merger
-* High-Level Synergy KPIs
 
-https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Executive%20Dashboard.pdf
+**Key Metrics Covered**
+- Consolidated Revenue
+- Month-over-Month Growth
+- Channel Mix Post-Merger
+- High-Level Synergy KPIs
 
-![Executive Dashboard](Dashboards/Screenshots/Screenshot1.png)
+<img src="Dashboards/Screenshots/Screenshot1.png" width="900">
+
+[View full dashboard (PDF)](Dashboards/AtliQon%20Executive%20Dashboard.pdf)
+
 
 
 💰 **Finance Dashboard**
