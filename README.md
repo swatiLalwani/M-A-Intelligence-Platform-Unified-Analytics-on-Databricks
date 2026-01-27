@@ -57,7 +57,7 @@ Functions Covered:
 * Product Profitability (simulated)
 * Seasonal Peaks & Risks
 
-<img src="Dashboards/Screenshots/Screenshot2 .png" width="900">
+<img src="Dashboards/Screenshots/Screenshot 2.png" width="900">
 
 [View full dashboard (PDF)](Dashboards/AtliQon%20Finance%20Dashboard.pdf)
 
