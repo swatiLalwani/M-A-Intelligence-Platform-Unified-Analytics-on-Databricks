@@ -1,11 +1,11 @@
 🏟️ AtliQon × Sportsbar — M&A Intelligence Platform
 
-📌 Project Overview
+📌 **Project Overview**
 
 This project simulates a post-merger analytics platform built on the Databricks Lakehouse, designed to help executives and business stakeholders analyze performance after AtliQon (a global consumer sports equipment company) acquires Sportsbar (a fast-growing sports nutrition startup).
 The platform enables Finance, Sales, Marketing, Operations, and Executive leadership to access a single source of truth and answer critical post-acquisition questions around revenue synergy, channel performance, product mix, and operational efficiency.
 
-🎯 Business Objective
+🎯 **Business Objective**
 
 Enable leadership to:
 
@@ -15,7 +15,7 @@ Enable leadership to:
 * Monitor operational risks during integration
 * Support data-driven strategic decisions with executive-ready dashboards
 
-🏭 Domain & Function Coverage
+🏭 **Domain & Function Coverage**
 
 Domain: Consumer Goods (Sports Equipment & Nutrition)
 
@@ -28,16 +28,16 @@ Functions Covered:
 * Executive Strategy
 
 
-🧱 Architecture (Databricks Lakehouse)
+🧱 **Architecture (Databricks Lakehouse)**
 
 * Bronze Layer: Raw transactional, customer, product, and channel data from both AtliQon and Sportsbar
 * Silver Layer: Cleaned, standardized, and conformed datasets
 * Gold Layer: Business-ready fact tables powering stakeholder dashboards
 * Orchestration: Automated pipelines for daily refresh and integration logic
 
-📊 Dashboards & Stakeholders
+📊 **Dashboards & Stakeholders**
 
-👔 Executive Dashboard
+👔 **Executive Dashboard**
 * Consolidated Revenue
 * Month-over-Month Growth
 * Channel Mix Post-Merger
@@ -45,7 +45,9 @@ Functions Covered:
 
 https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Executive%20Dashboard.pdf
 
-💰 Finance Dashboard
+Dashboards/Screenshots/Screenshot1 .png
+
+💰 **Finance Dashboard**
 * Revenue Trends
 * Channel Contribution
 * Product Profitability (simulated)
@@ -53,58 +55,92 @@ https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-D
 
 https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Finance%20Dashboard.pdf
 
-📈 Sales Dashboard
+Dashboards/Screenshots/Screenshot 2.png
+
+📈 **Sales Dashboard**
 * Channel Performance (Retail, Direct, E-Commerce)
 * Key Customers & Revenue Concentration
 * Cross-Sell Opportunities
 
 https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Sales%20Dashboard.pdf
 
-📣 Marketing Dashboard
+Dashboards/Screenshots/Screenshot 3.png
+
+📣 **Marketing Dashboard**
 * New vs Returning Customers
 * Customer Acquisition Trends
 * Loyalty & Retention Signals
 
 https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Marketing%20Dashboard.pdf
 
-🚚 Operations Dashboard
+Dashboards/Screenshots/Screenshot 4.png
+
+🚚 **Operations Dashboard**
 * Inventory Distribution
 * Warehouse Optimization Signals
 * Stockout Risk Monitoring
 
 https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Operations%20Dashboard.pdf
 
-🔑 Key Performance Insights
+Dashboards/Screenshots/Screenshot 6.png
 
-1️⃣ Revenue Synergy
-* A major revenue peak in December ($21.77B) confirms successful consolidation of year-end sales from both companies.
-* Indicates strong seasonal alignment post-acquisition.
+🔑 Key Insights
 
-2️⃣ Channel Opportunity
-* Retailers contribute 78.26% of total revenue.
-* Direct + E-Commerce currently sit at 20%.
-* Sportsbar’s startup-driven digital model provides a clear blueprint to accelerate AtliQon’s DTC growth.
+**Executive Dashboard**
 
-3️⃣ Product Performance
-* Traditional sports equipment (Cricket / Football) dominates revenue share.
-* Nutrition & Energy Bars show high growth potential but remain underpenetrated.
-* Strong cross-sell opportunity with existing FitnessWorld and Amazon customers.
+- December consolidated revenue peaked at $21.77B, the highest month post-merger
 
-🚀 Strategic Recommendations 
+- Retail contributes approximately 78% of total revenue, indicating strong legacy channel dominance
 
-🔹 Inventory Cross-Optimization
+- Revenue trends show a steady rise into Q4, aligning with seasonal demand patterns
+
+**Finance Dashboard**
+
+- Revenue increases steadily from mid-year through December
+
+- Channel contribution analysis shows a heavy reliance on retail distribution
+
+- Seasonal peaks suggest heightened planning requirements during year-end demand cycles
+
+**Sales Dashboard**
+
+- Retail drives the majority of revenue, while Direct and E-Commerce remain underpenetrated
+
+- Revenue is concentrated among a limited number of high-value customers
+
+- Cross-sell potential exists between equipment and nutrition product categories
+
+**Marketing Dashboard**
+
+- Approximately 66% of customers are new, reflecting strong acquisition performance
+
+- Returning customers represent a smaller share, highlighting retention opportunity
+
+- Digital channels play a meaningful role in customer acquisition
+
+**Operations Dashboard**
+
+- Inventory demand increases notably during Q4
+
+- Warehouse-level distribution varies by product category
+
+- Inventory placement opportunities exist to better align with demand patterns
+
+🚀 **Strategic Recommendations** 
+
+🔹 **Inventory Cross-Optimization**
 
 Identify warehouses where AtliQon equipment and Sportsbar nutrition products can be co-located to reduce last-mile shipping costs and improve delivery speed.
 
-🔹 Customer Loyalty Integration
+🔹 **Customer Loyalty Integration**
 
 Leverage the 66% New Customer rate from Marketing analytics to launch an “Athlete” Loyalty Program, rewarding customers who purchase across both equipment and nutrition categories.
 
-🔹 Process Automation
+🔹 **Process Automation**
 
 Expand the orchestrated pipeline to include real-time low-stock alerts across both companies, preventing stockouts during high-demand post-merger periods.
 
-🧠 Skills Demonstrated
+🧠 **Skills Demonstrated**
 * End-to-end analytics storytelling
 * M&A-focused KPI design
 * Databricks Lakehouse architecture
