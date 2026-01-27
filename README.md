@@ -45,7 +45,7 @@ Functions Covered:
 
 https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/AtliQon%20Executive%20Dashboard.pdf
 
-![Executive Dashboard](Dashboards/Screenshots/Screenshot1.png)
+![Executive Dashboard]([Dashboards/Screenshots/Screenshot1.png](https://github.com/swatiLalwani/M-A-Intelligence-Platform-Unified-Analytics-on-Databricks/blob/main/Dashboards/Screenshots/Screenshot1%20.png)
 
 
 💰 **Finance Dashboard**
