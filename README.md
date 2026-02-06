@@ -17,13 +17,14 @@
 ## 📋 Table of Contents
 * [🎯 Business Problem](#-business-problem)
 * [💡 Solution Overview](#-solution-overview)
-* [🧱 Architecture](#️-architecture)
+* [🧱 Architecture](#️-architecture-databricks-lakehouse)
 * [🔄 Data Pipeline](#-data-pipeline)
 * [📊 Dashboards & Insights](#-dashboards--insights)
 * [🛠️ Technical Implementation](#️-technical-implementation)
 * [📈 Key Results](#-key-results)
 * [🎓 Skills Demonstrated](#-skills-demonstrated)
 
+  
 🎯 Business Problem
 Scenario: AtliQon, a global sports equipment manufacturer ($21B+ annual revenue), acquires Sportsbar, a fast-growing sports nutrition startup.
 Challenge:
