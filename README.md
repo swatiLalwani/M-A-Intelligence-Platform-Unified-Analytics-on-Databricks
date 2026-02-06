@@ -15,17 +15,16 @@
 
 
 ## 📋 Table of Contents
-* [🎯 Business Problem](#-business-problem)
-* [💡 Solution Overview](#-solution-overview)
-* [🧱 Architecture](#️-architecture-databricks-lakehouse)
-* [🔄 Data Pipeline](#-data-pipeline)
-* [📊 Dashboards & Insights](#-dashboards--insights)
-* [🛠️ Technical Implementation](#️-technical-implementation)
-* [📈 Key Results](#-key-results)
-* [🎓 Skills Demonstrated](#-skills-demonstrated)
-
+* [🎯 Business Problem](#business-problem)
+* [💡 Solution Overview](#solution-overview)
+* [🧱 Architecture](#architecture)
+* [🔄 Data Pipeline](#data-pipeline)
+* [📊 Dashboards & Insights](#dashboards-insights)
+* [🛠️ Technical Implementation](#technical-implementation)
+* [📈 Key Results](#key-results)
+* [🎓 Skills Demonstrated](#skills-demonstrated)
   
-🎯 Business Problem
+## <a id="business-problem"></a>🎯 Business Problem
 Scenario: AtliQon, a global sports equipment manufacturer ($21B+ annual revenue), acquires Sportsbar, a fast-growing sports nutrition startup.
 Challenge:
 
@@ -47,7 +46,7 @@ Delivers 5 stakeholder-specific dashboards for actionable insights
 Timeline: Historical load (Jul-Nov 2024) + Daily incremental processing (Dec 2024 onwards)
 
 
-🧱 **Architecture (Databricks Lakehouse)**
+## <a id="architecture"></a>🧱 Architecture (Databricks Lakehouse)
 
 ![Architecture](https://img.shields.io/badge/Architecture-Medallion-blueviolet)
 ![Modeling](https://img.shields.io/badge/Modeling-Star_Schema-lightgrey)
