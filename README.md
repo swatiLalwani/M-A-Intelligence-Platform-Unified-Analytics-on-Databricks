@@ -84,8 +84,11 @@ Processing Workflow
 1️⃣ Dimension Processing (Silver Layer)
 
 📂 Scripts/
+
 ├── 1_customer_data_processing.ipynb    → Unified customer master
+
 ├── 2_products_data_processing.ipynb    → Merged product catalog  
+
 └── 3_pricing_data_processing.ipynb     → Cost/price standardization
 
 Key Transformations:
@@ -97,14 +100,19 @@ Currency Normalization: Standardized all transactions to USD
 2️⃣ Fact Table Creation (Gold Layer)
 
 📂 Scripts/
+
 ├── 1_full_load_fact.ipynb              → Historical facts (Jul-Nov)
+
 └── 2_incremental_load_fact.ipynb       → Daily append (Dec onwards)
 
 Incremental Loading Pattern:
 
 📂 Datasets/Sportsbar/Incremental_load/
+
 ├── orders_2025_12_01.csv   → Day 1 transactions
+
 ├── orders_2025_12_02.csv   → Day 2 transactions
+
 └── orders_2025_12_03.csv   → Day 3 transactions
 
 Processes daily order files arriving in S3
@@ -220,7 +228,17 @@ Tech Stack
 Data Model
 Gold Layer Schema (Simplified)
 Fact Table: fact_sales_unified
-ColumnTypeDescriptionorder_idSTRINGUnique order identifierorder_dateDATETransaction datecustomer_idSTRINGFK to customer dimensionproduct_idSTRINGFK to product dimensionchannelSTRINGSales channel (Retail/Direct/E-Commerce)revenueDECIMAL(18,2)Net revenue in USDquantityINTEGERUnits soldcompany_sourceSTRING'AtliQon' or 'Sportsbar'
+| Column | Type | Description |
+|--------|------|-------------|
+| `order_id` | STRING | Unique order identifier |
+| `order_date` | DATE | Transaction date |
+| `customer_id` | STRING | FK to customer dimension |
+| `product_id` | STRING | FK to product dimension |
+| `channel` | STRING | Sales channel (Retail/Direct/E-Commerce) |
+| `revenue` | DECIMAL(18,2) | Net revenue in USD |
+| `quantity` | INTEGER | Units sold |
+| `company_source` | STRING | 'AtliQon' or 'Sportsbar' |
+```
 
 Dimensions:
 dim_customer: Unified customer master (email-based matching)
