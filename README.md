@@ -1,6 +1,6 @@
 🏟️ AtliQon × Sportsbar — M&A Intelligence Platform
 ![Pipeline Status](https://img.shields.io/badge/Pipeline-99.2%25%20Success-brightgreen)
-![Processing Time](https://img.shields.io/badge/Processing- <5_Min-blue)
+![Processing Time](https://img.shields.io/badge/Processing-<5_Min-blue)
 ![Data Match Rate](https://img.shields.io/badge/Match_Rate-100%25-orange)
 ![Manual Work Reduced](https://img.shields.io/badge/Efficiency-%2B40hrs/week-red)
 
@@ -322,5 +322,5 @@ Business Acumen
 ![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
 ![AWS S3](https://img.shields.io/badge/AWS_S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black)
+
 
