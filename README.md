@@ -1,8 +1,17 @@
-🏟️ AtliQon × Sportsbar — M&A Intelligence Platform
-![Pipeline Status](https://img.shields.io/badge/Pipeline-99.2%25%20Success-brightgreen)
-![Processing Time](https://img.shields.io/badge/Processing-<5_Min-blue)
+# 🏟️ AtliQon × Sportsbar — M&A Intelligence Platform
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS_S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white" />
+  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black" />
+</p>
+
+> **Transforming fragmented M&A data into a unified $21B Executive Intelligence hub.**
+
+![Pipeline Status](https://img.shields.io/badge/Pipeline-99.2%25%20Success-brightgreen) 
+![Processing Time](https://img.shields.io/badge/Processing- <5_Min-blue) 
 ![Data Match Rate](https://img.shields.io/badge/Match_Rate-100%25-orange)
-![Manual Work Reduced](https://img.shields.io/badge/Efficiency-%2B40hrs/week-red)
+
 
 📋 Table of Contents
 
