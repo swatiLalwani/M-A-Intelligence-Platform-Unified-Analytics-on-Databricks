@@ -266,6 +266,7 @@ Business Impact
 MetricResultTime to InsightsExecutive dashboard live within 3 weeks of acquisitionData ConsolidationUnified 2 disparate systems into single lakehouseReporting AutomationEliminated 40+ hours/week of manual Excel workStakeholder CoverageServed 5 business functions with dedicated dashboards
 
 Strategic Recommendations Delivered
+
 🔹 Inventory Cross-Optimization
 Co-locate AtliQon equipment and Sportsbar nutrition products in warehouses to reduce last-mile delivery costs and improve delivery speed.
 🔹 Customer Loyalty Integration
