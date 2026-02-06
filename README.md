@@ -14,17 +14,15 @@
 ![Data Match Rate](https://img.shields.io/badge/Match_Rate-100%25-orange)
 
 
-📋 Table of Contents
-
-Business Problem
-Solution Overview
-Architecture
-Data Pipeline
-Dashboards & Insights
-Technical Implementation
-Key Results
-Setup & Usage
-Skills Demonstrated
+## 📋 Table of Contents
+* [🎯 Business Problem](#-business-problem)
+* [💡 Solution Overview](#-solution-overview)
+* [🧱 Architecture](#️-architecture)
+* [🔄 Data Pipeline](#-data-pipeline)
+* [📊 Dashboards & Insights](#-dashboards--insights)
+* [🛠️ Technical Implementation](#️-technical-implementation)
+* [📈 Key Results](#-key-results)
+* [🎓 Skills Demonstrated](#-skills-demonstrated)
 
 🎯 Business Problem
 Scenario: AtliQon, a global sports equipment manufacturer ($21B+ annual revenue), acquires Sportsbar, a fast-growing sports nutrition startup.
