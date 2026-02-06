@@ -47,9 +47,7 @@ Medallion Architecture Layers
 │  Sportsbar:   Raw CSV files from S3 (customers, orders,     │
 │               products, pricing) + daily incremental files  │
 └─────────────────────────────────────────────────────────────┘
-
-                            ↓
-                            
+                           ↓
 ┌─────────────────────────────────────────────────────────────┐
 │  SILVER LAYER (Cleaned & Conformed)                         │
 ├─────────────────────────────────────────────────────────────┤
@@ -58,9 +56,7 @@ Medallion Architecture Layers
 │  • Pricing/cost tables with currency normalization          │
 │  • Data quality checks & deduplication                      │
 └─────────────────────────────────────────────────────────────┘
-
-                            ↓
-                            
+                            ↓                           
 ┌─────────────────────────────────────────────────────────────┐
 │  GOLD LAYER (Business-Ready Facts)                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -68,9 +64,7 @@ Medallion Architecture Layers
 │  • Denormalized views for BI consumption                    │
 │  • Aggregated metrics by channel, product, customer         │
 └─────────────────────────────────────────────────────────────┘
-
-                            ↓
-                            
+                            ↓                          
                     Databricks Dashboard
 
  
