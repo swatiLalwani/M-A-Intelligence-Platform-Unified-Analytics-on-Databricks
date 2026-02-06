@@ -1,4 +1,8 @@
 🏟️ AtliQon × Sportsbar — M&A Intelligence Platform
+![Pipeline Status](https://img.shields.io/badge/Pipeline-99.2%25%20Success-brightgreen)
+![Processing Time](https://img.shields.io/badge/Processing- <5_Min-blue)
+![Data Match Rate](https://img.shields.io/badge/Match_Rate-100%25-orange)
+![Manual Work Reduced](https://img.shields.io/badge/Efficiency-%2B40hrs/week-red)
 
 📋 Table of Contents
 
@@ -35,6 +39,10 @@ Timeline: Historical load (Jul-Nov 2024) + Daily incremental processing (Dec 202
 
 
 🧱 **Architecture (Databricks Lakehouse)**
+
+![Architecture](https://img.shields.io/badge/Architecture-Medallion-blueviolet)
+![Modeling](https://img.shields.io/badge/Modeling-Star_Schema-lightgrey)
+![ETL](https://img.shields.io/badge/ETL-Incremental_Load-yellowgreen)
 
 <img src="Docs/project_architecture.png" width="900">
 
@@ -310,5 +318,9 @@ Business Acumen
 ✅ Strategic recommendation development
 ✅ Executive communication
 
-
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
+![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
+![AWS S3](https://img.shields.io/badge/AWS_S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black)
 
