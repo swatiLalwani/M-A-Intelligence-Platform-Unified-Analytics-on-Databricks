@@ -240,6 +240,7 @@ dim_product: Merged product catalog with category hierarchy
 dim_pricing: Cost and pricing tables
 
 Orchestration:
+
 <img src="Orchestration/jobrun.png" width="900">
 
 Key Technical Decisions
