@@ -84,7 +84,7 @@ Medallion Architecture Layers
                     Databricks Dashboard
 
  
-🔄 Data Pipeline
+## <a id="data-pipeline"></a>🔄 Data Pipeline
 Source Systems
 Company   DataSource        Format               LoadType           Period
 AtliQon   Pre-processed DW  exportParquet/CSV    Full Load          Jul-Nov 2024
@@ -129,7 +129,7 @@ Processes daily order files arriving in S3
 Appends to unified fact table with company_source flag
 Maintains full history for trend analysis
 
-📊 Dashboards & Insights
+## <a id="dashboards-insights"></a>📊 Dashboards & Insights
 Built 5 stakeholder-specific dashboards to address different business questions:
 👔 1. Executive Dashboard
 Audience: C-Suite, Board Members
@@ -224,7 +224,7 @@ Co-location opportunities exist for equipment + nutrition products
 
 [View full dashboard (PDF)](Dashboards/AtliQon%20Operations%20Dashboard.pdf)
 
-🛠️ Technical Implementation
+## <a id="technical-implementation"></a>🛠️ Technical Implementation
 Tech Stack
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
@@ -277,7 +277,7 @@ Solution: Created new "Nutrition" category while preserving existing hierarchies
 Result: Enables cross-category analysis without disrupting existing reports
 
 
-📈 Key Results
+## <a id="key-results"></a>📈 Key Results
 Business Impact
 MetricResultTime to InsightsExecutive dashboard live within 3 weeks of acquisitionData ConsolidationUnified 2 disparate systems into single lakehouseReporting AutomationEliminated 40+ hours/week of manual Excel workStakeholder CoverageServed 5 business functions with dedicated dashboards
 
@@ -293,7 +293,7 @@ Invest in Direct and E-Commerce channels (currently 20% of revenue) using Sports
 Expand pipeline to include real-time low-stock alerts, preventing stockouts during high-demand periods.
 
 
-🎓 Skills Demonstrated
+## <a id="skills-demonstrated"></a>🎓 Skills Demonstrated
 Data Engineering
 
 ✅ Medallion Architecture (Bronze/Silver/Gold) implementation
