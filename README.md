@@ -38,6 +38,8 @@ Timeline: Historical load (Jul-Nov 2024) + Daily incremental processing (Dec 202
 
 <img src="Docs/project_architecture.png" width="900">
 
+Medallion Architecture Layers
+
 ┌─────────────────────────────────────────────────────────────┐
 │  BRONZE LAYER (Raw Data Ingestion)                         │
 ├─────────────────────────────────────────────────────────────┤
@@ -45,7 +47,9 @@ Timeline: Historical load (Jul-Nov 2024) + Daily incremental processing (Dec 202
 │  Sportsbar:   Raw CSV files from S3 (customers, orders,     │
 │               products, pricing) + daily incremental files  │
 └─────────────────────────────────────────────────────────────┘
+
                             ↓
+                            
 ┌─────────────────────────────────────────────────────────────┐
 │  SILVER LAYER (Cleaned & Conformed)                         │
 ├─────────────────────────────────────────────────────────────┤
@@ -54,7 +58,9 @@ Timeline: Historical load (Jul-Nov 2024) + Daily incremental processing (Dec 202
 │  • Pricing/cost tables with currency normalization          │
 │  • Data quality checks & deduplication                      │
 └─────────────────────────────────────────────────────────────┘
+
                             ↓
+                            
 ┌─────────────────────────────────────────────────────────────┐
 │  GOLD LAYER (Business-Ready Facts)                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -62,16 +68,21 @@ Timeline: Historical load (Jul-Nov 2024) + Daily incremental processing (Dec 202
 │  • Denormalized views for BI consumption                    │
 │  • Aggregated metrics by channel, product, customer         │
 └─────────────────────────────────────────────────────────────┘
+
                             ↓
+                            
                     Databricks Dashboard
 
  
 🔄 Data Pipeline
 Source Systems
-CompanyData SourceFormatLoad TypePeriodAtliQonPre-processed DW exportParquet/CSVFull LoadJul-Nov 2024SportsbarOperational Database (via S3)CSVFull + IncrementalJul-Dec 2024
+Company   DataSource        Format               LoadType           Period
+AtliQon   Pre-processed DW  exportParquet/CSV    Full Load          Jul-Nov 2024
+Sportsbar Operational      Database (via S3)CSV  Full + Incremental Jul-Dec 2024
 
 Processing Workflow
 1️⃣ Dimension Processing (Silver Layer)
+
 📂 Scripts/
 ├── 1_customer_data_processing.ipynb    → Unified customer master
 ├── 2_products_data_processing.ipynb    → Merged product catalog  
@@ -84,11 +95,13 @@ Product Hierarchy: Mapped Sportsbar nutrition SKUs into AtliQon's category taxon
 Currency Normalization: Standardized all transactions to USD
 
 2️⃣ Fact Table Creation (Gold Layer)
+
 📂 Scripts/
 ├── 1_full_load_fact.ipynb              → Historical facts (Jul-Nov)
 └── 2_incremental_load_fact.ipynb       → Daily append (Dec onwards)
 
 Incremental Loading Pattern:
+
 📂 Datasets/Sportsbar/Incremental_load/
 ├── orders_2025_12_01.csv   → Day 1 transactions
 ├── orders_2025_12_02.csv   → Day 2 transactions
@@ -195,8 +208,15 @@ Co-location opportunities exist for equipment + nutrition products
 
 🛠️ Technical Implementation
 Tech Stack
-LayerTechnologyPurposeStorageAWS S3Raw data ingestion (Sportsbar CSV files)ProcessingDatabricks (PySpark)Bronze → Silver → Gold transformationsOrchestrationDatabricks WorkflowsDaily automated pipeline executionModelingSQL, Python (Pandas)Dimensional modeling, fact table creationVisualizationPower BIStakeholder dashboardsVersion ControlGit/GitHubCode & documentation management
-
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Storage** | AWS S3 | Raw data ingestion (Sportsbar CSV files) |
+| **Processing** | Databricks (PySpark) | Bronze → Silver → Gold transformations |
+| **Orchestration** | Databricks Workflows | Daily automated pipeline execution |
+| **Modeling** | SQL, Python (Pandas) | Dimensional modeling, fact table creation |
+| **Visualization** | Power BI | Stakeholder dashboards |
+| **Version Control** | Git/GitHub | Code & documentation management |
+```
 Data Model
 Gold Layer Schema (Simplified)
 Fact Table: fact_sales_unified
