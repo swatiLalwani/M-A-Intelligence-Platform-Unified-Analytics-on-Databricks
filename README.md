@@ -139,9 +139,9 @@ Processing Workflow
 
 Key Transformations:
 
-Customer Unification: Merged AtliQon numeric IDs with Sportsbar UUIDs using email-based matching
-Product Hierarchy: Mapped Sportsbar nutrition SKUs into AtliQon's category taxonomy
-Currency Normalization: Standardized all transactions to USD
+- Customer Validation: Validated customer IDs using regex pattern matching (^[0-9]+$), replacing invalid entries with placeholder '999999'
+- Product Integration: Merged Sportsbar nutrition categories (Breakfast Foods, Dairy & Recovery, Hydration) into AtliQon's product taxonomy
+- Data Standardization: Handled 4 different date formats, removed duplicates, cast data types
 
 2️⃣ Fact Table Creation (Gold Layer)
 
