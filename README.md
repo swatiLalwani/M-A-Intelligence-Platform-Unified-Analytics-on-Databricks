@@ -25,26 +25,60 @@
 * [🎓 Skills Demonstrated](#skills-demonstrated)
   
 ## <a id="business-problem"></a>🎯 Business Problem
-Scenario: AtliQon, a global sports equipment manufacturer ($21B+ annual revenue), acquires Sportsbar, a fast-growing sports nutrition startup.
-Challenge:
+**Scenario:** AtliQon, a global sports equipment manufacturer ($119.93B annual revenue), acquires Sportsbar, a fast-growing sports nutrition startup.
 
-AtliQon operates on a mature ERP system with centralized data warehouse
-Sportsbar's data scattered across cloud APIs, CSV exports, and relational databases
-No unified view for Finance, Sales, Marketing, Supply Chain, and Executives
-Manual Excel-based reporting causing delays and inconsistencies
-Leadership needs fast insights without committing to a multi-year data migration
+**Challenge:**
+- AtliQon operates on a mature ERP system with centralized data warehouse
+- Sportsbar's operational data scattered across CSV files in AWS S3
+- No unified analytics platform combining both companies' data
+- Manual Excel-based reporting causing delays in post-merger insights
+- Leadership needs integrated dashboards to track combined performance
 
-Goal: Build a Databricks Lakehouse to consolidate both companies' data and enable cross-company analytics within weeks of acquisition.
+**Goal:** Build a Databricks Lakehouse consolidating both companies' data and enable cross-company analytics for executive decision-making.
 
-💡 Solution Overview
-Built a Medallion Architecture on Databricks that:
+---
 
-Ingests raw data from both companies (AtliQon's data warehouse + Sportsbar's operational systems)
-Transforms and unifies data through Bronze → Silver → Gold layers
-Handles historical backfill (5 months) + ongoing daily incremental loads
-Delivers 5 stakeholder-specific dashboards for actionable insights
-Timeline: Historical load (Jul-Nov 2024) + Daily incremental processing (Dec 2024 onwards)
+**Project Scope:**
+- **AtliQon Data:** Pre-processed exports from existing data warehouse (historical baseline)
+- **Sportsbar Data:** Raw CSV files from operational systems requiring full ETL (focus of this project)
+- **Combined Output:** Unified dashboards showing integrated business metrics
 
+## <a id="Solution Overview"></a>🎯 💡 Solution Overview
+
+Built a Databricks Lakehouse architecture that unified both companies' data into a single analytical layer:
+
+**Data Integration:**
+- **AtliQon:** Loaded pre-curated exports from existing data warehouse (39M+ units historical)
+- **Sportsbar:** Built end-to-end ETL processing raw CSV files from AWS S3 (50K+ orders)
+- **Combined:** Merged into unified fact/dimension tables for cross-company analytics
+
+**ETL Pipeline (Medallion Architecture):**
+- **Bronze Layer:** Raw data ingestion from S3 with metadata tracking
+- **Silver Layer:** Data quality transformations (validation, standardization, deduplication)
+- **Gold Layer:** Business-ready dimensional model optimized for BI consumption
+
+**Data Quality Transformations:**
+- Validated customer IDs using regex pattern matching (^[0-9]+$)
+- Standardized 4 different date formats using PySpark coalesce
+- Removed duplicate order records via composite key deduplication
+- Handled null values and data type mismatches
+
+**Incremental Loading:**
+- Daily processing of new CSV files from S3 landing directory
+- Staging table pattern preventing reprocessing of historical data
+- Automated file archival (landing → processed directories)
+
+**Deliverables:**
+- 5 stakeholder-specific dashboards (Executive, Finance, Sales, Marketing, Operations)
+- Unified dimensional model combining equipment + nutrition product lines
+- Automated daily refresh pipeline with Delta Lake ACID guarantees
+
+**Key Metrics (Combined Company Data):**
+- Total Revenue: $119.93B
+- Total Units Sold: 39.05M
+- Unique Customers: 54
+- Product Categories: 50+ (Equipment + Nutrition)
+- Channels: Retailer, Direct, Acquisition
 
 ## <a id="architecture"></a>🧱 Architecture (Databricks Lakehouse)
 
@@ -56,33 +90,35 @@ Timeline: Historical load (Jul-Nov 2024) + Daily incremental processing (Dec 202
 
 Medallion Architecture Layers
 
+```
 ┌─────────────────────────────────────────────────────────────┐
-│  BRONZE LAYER (Raw Data Ingestion)                         │
+│ BRONZE LAYER (Raw Data Ingestion)                           │
 ├─────────────────────────────────────────────────────────────┤
-│  AtliQon:     Curated exports from existing DW (5 months)   │
-│  Sportsbar:   Raw CSV files from S3 (customers, orders,     │
-│               products, pricing) + daily incremental files  │
+│ • AtliQon: Pre-curated exports (historical baseline)        │
+│ • Sportsbar: Raw CSV from S3 (50K+ orders)                  │
+│ • Metadata: file_name, file_size, read_timestamp            │
 └─────────────────────────────────────────────────────────────┘
-                           ↓
+                            ↓
 ┌─────────────────────────────────────────────────────────────┐
-│  SILVER LAYER (Cleaned & Conformed)                         │
+│ SILVER LAYER (Cleaned & Standardized)                       │
 ├─────────────────────────────────────────────────────────────┤
-│  • Standardized customer dimension (unified IDs)            │
-│  • Product catalog with merged hierarchies                  │
-│  • Pricing/cost tables with currency normalization          │
-│  • Data quality checks & deduplication                      │
+│ • Customer ID validation (regex pattern matching)           │
+│ • Date standardization (4 format variants → DATE type)      │
+│ • Duplicate removal (composite key deduplication)           │
+│ • Null handling & data type casting                         │
 └─────────────────────────────────────────────────────────────┘
-                            ↓                           
+                            ↓
 ┌─────────────────────────────────────────────────────────────┐
-│  GOLD LAYER (Business-Ready Facts)                          │
+│ GOLD LAYER (Business-Ready Dimensional Model)               │
 ├─────────────────────────────────────────────────────────────┤
-│  • Unified sales fact table (AtliQon + Sportsbar)           │
-│  • Denormalized views for BI consumption                    │
-│  • Aggregated metrics by channel, product, customer         │
+│ • fact_sales_unified (39M+ units, $119.93B revenue)         │
+│ • dim_customer (54 customers)                               │
+│ • dim_product (50+ categories: equipment + nutrition)       │
+│ • Denormalized views for dashboard consumption              │
 └─────────────────────────────────────────────────────────────┘
-                            ↓                          
-                    Databricks Dashboard
-
+                            ↓
+                 Databricks Dashboards
+```
  
 ## <a id="data-pipeline"></a>🔄 Data Pipeline
 Source Systems
@@ -130,168 +166,291 @@ Appends to unified fact table with company_source flag
 Maintains full history for trend analysis
 
 ## <a id="dashboards-insights"></a>📊 Dashboards & Insights
-Built 5 stakeholder-specific dashboards to address different business questions:
-👔 1. Executive Dashboard
-Audience: C-Suite, Board Members
-Questions Answered:
+Built 5 stakeholder-specific dashboards analyzing combined company performance:
 
-What is our consolidated post-merger revenue?
-Are we achieving revenue synergies?
-Which channels drive the most value?
+---
 
-Key Metrics:
+### 👔 1. Executive Dashboard
 
-📈 Total Revenue: $21.77B (Dec 2024 peak)
-📊 Month-over-Month Growth Trends
-🎯 Channel Mix: Retail (78%) | Direct/E-Commerce (20%) | Others (2%)
+**Audience:** C-Suite, Board Members
+
+**Key Metrics:**
+- 📈 Total Revenue: **$119.93B**
+- 📊 Total Units Sold: **39.05M**
+- 💰 Average Selling Price: **$4,052.46**
+- 👥 Unique Customers: **54**
+
+**Insights:**
+- Revenue distribution across Retailer, Direct, and Acquisition channels
+- Top 5 customers identified (FitnessWorld, Atlikon Essentials, Atlikon Superstore)
+- Monthly revenue trends showing seasonality patterns
+- Price vs quantity relationship analysis
 
 
-<img src="Dashboards/Screenshots/Screenshot1 .png" width="900">
+**Screenshot:** <img src="Dashboards/Screenshots/Screenshot1 .png" width="900">
 
 [View full dashboard (PDF)](Dashboards/AtliQon%20Executive%20Dashboard.pdf)
 
-
+---
 
 💰 2. Finance Dashboard
-Audience: CFO, Finance Team
-Questions Answered:
+**Audience:** CFO, Finance Team
 
-What are revenue trends by month and channel?
-Which products/channels are most profitable?
-What are our seasonal demand patterns?
+**Key Metrics:**
+- Total Revenue: $119.93B
+- Average Selling Price: $4,052.46
+- Total Units Sold: 39.05M
+- Revenue QoQ Change: $101.21K
 
-Key Insights:
+**Insights:**
+- Revenue and units trend over time
+- Revenue breakdown by division (Archery, Basketball, Cycling, **Nutrition categories**)
+- Quarter-over-quarter revenue change by division
+- Average selling price trends by division
 
-Revenue increases steadily from mid-year through Q4
-December shows highest seasonal peak
-Retail channel dominates contribution (78%)
-
-<img src="Dashboards/Screenshots/Screenshot 2.png" width="900">
+**Screenshot:** <img src="Dashboards/Screenshots/Screenshot 2.png" width="900">
 
 [View full dashboard (PDF)](Dashboards/AtliQon%20Finance%20Dashboard.pdf)
 
+---
+
 📈 3. Sales Dashboard
-Audience: VP Sales, Regional Managers
-Questions Answered:
+**Audience:** VP Sales, Regional Managers
 
-How do Retail, Direct, and E-Commerce channels perform?
-Who are our key customers post-merger?
-Where are cross-sell opportunities?
+**Key Insights:**
+- Revenue performance by channel (Retailer vs Direct vs Acquisition)
+- Top products by revenue (Cricket, Football, Weight Lifting)
+- Top customers by revenue (visual ranking)
+- Sales trends by platform (Brick & Mortar, E-Commerce, Sports Bar)
+- Top-performing categories by revenue per quarter
 
-Key Insights:
-
-Retail drives majority of revenue; Direct/E-Commerce underpenetrated
-Revenue concentrated among top 10 customers
-Cross-sell potential exists between equipment and nutrition categories
-
-<img src="Dashboards/Screenshots/Screenshot 6.png" width="900">
+**Screenshot:** <img src="Dashboards/Screenshots/Screenshot 6.png" width="900">
 
 [View full dashboard (PDF)](Dashboards/AtliQon%20Sales%20Dashboard.pdf)
 
+---
+
 📣 4. Marketing Dashboard
-Audience: CMO, Marketing Team
-Questions Answered:
+**Audience:** CMO, Marketing Team
 
-What's our customer acquisition rate post-merger?
-How many customers are returning vs. new?
-Which channels drive customer growth?
+**Key Insights:**
+- Quarter-over-quarter revenue growth by product category
+- New vs repeat customer proportions by acquisition channel
+- Revenue distribution by platform
+- Market and product performance matrix (category × market analysis)
 
-Key Insights:
-
-66% of customers are new (strong acquisition)
-Returning customers represent retention opportunity
-Digital channels play meaningful role in acquisition
-
-<img src="Dashboards/Screenshots/Screenshot 3.png" width="900">
+**Screenshot:** <img src="Dashboards/Screenshots/Screenshot 3.png" width="900">
 
 [View full dashboard (PDF)](Dashboards/AtliQon%20Marketing%20Dashboard.pdf)
 
+---
+
 🚚 5. Operations Dashboard
-Audience: VP Supply Chain, Warehouse Managers
-Questions Answered:
+**Audience:** VP Supply Chain, Warehouse Managers
 
-Where is inventory concentrated?
-How does demand vary by quarter?
-Are there stockout risks?
+**Key Insights:**
+- Units sold by product variant
+- Demand trends by category (50+ categories tracked)
+- Seasonality patterns for inventory planning
+- High-volume low-revenue products identification
+- Platform distribution (Brick & Mortar vs E-Commerce)
 
-Key Insights:
-
-Inventory demand increases notably during Q4
-Warehouse-level distribution varies by product category
-Co-location opportunities exist for equipment + nutrition products
-
-<img src="Dashboards/Screenshots/Screenshot 4.png" width="900">
+**Screenshot:** <img src="Dashboards/Screenshots/Screenshot 4.png" width="900">
 
 [View full dashboard (PDF)](Dashboards/AtliQon%20Operations%20Dashboard.pdf)
 
+---
+
+### Cross-Dashboard Insights
+
+**✅ Product Integration Success:**
+- Nutrition categories (Breakfast Foods, Dairy & Recovery, Hydration & Electrolytes, Healthy Snacks) successfully integrated alongside equipment
+- Cross-category analysis now possible for customer purchasing patterns
+
+**✅ Channel Performance:**
+- Three distinct channels visible: Retailer, Direct, Acquisition
+- Platform breakdown: Brick & Mortar, E-Commerce, Sports Bar
+
+**✅ Customer Intelligence:**
+- 54 unique customers tracked post-merger
+- Top customer concentration identified (FitnessWorld appears 3x in top 5)
+- Customer segmentation by channel and platform enabled
+
 ## <a id="technical-implementation"></a>🛠️ Technical Implementation
-Tech Stack
+### Tech Stack
+
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
-| **Storage** | AWS S3 | Raw data ingestion (Sportsbar CSV files) |
+| **Storage** | AWS S3 | Raw CSV file ingestion (Sportsbar data) |
 | **Processing** | Databricks (PySpark) | Bronze → Silver → Gold transformations |
-| **Orchestration** | Databricks Workflows | Daily automated pipeline execution |
-| **Modeling** | SQL, Python (Pandas) | Dimensional modeling, fact table creation |
-| **Visualization** | Power BI | Stakeholder dashboards |
+| **Data Format** | Delta Lake | ACID transactions, time travel, schema evolution |
+| **Orchestration** | Databricks Workflows | Automated daily pipeline execution |
+| **Modeling** | SQL, Python | Dimensional modeling, data quality logic |
+| **Visualization** | Databricks Dashboards | 5 stakeholder-specific views |
 | **Version Control** | Git/GitHub | Code & documentation management |
-```
-Data Model
-Gold Layer Schema (Simplified)
-Fact Table: fact_sales_unified
-| Column | Type | Description |
-|--------|------|-------------|
-| `order_id` | STRING | Unique order identifier |
-| `order_date` | DATE | Transaction date |
-| `customer_id` | STRING | FK to customer dimension |
-| `product_id` | STRING | FK to product dimension |
-| `channel` | STRING | Sales channel (Retail/Direct/E-Commerce) |
-| `revenue` | DECIMAL(18,2) | Net revenue in USD |
-| `quantity` | INTEGER | Units sold |
-| `company_source` | STRING | 'AtliQon' or 'Sportsbar' |
+
+---
+
+### Data Model
+
+**Fact Table:** `fact_sales_unified`
+- Combines AtliQon equipment sales + Sportsbar nutrition sales
+- 39M+ units across combined product catalog
+- Grain: One row per order line item
+
+**Dimension Tables:**
+- `dim_customer` - 54 unique customers across all channels
+- `dim_product` - 50+ categories (equipment + nutrition)
+- `dim_pricing` - Cost and price history
+
+---
+
+### Key Technical Challenges Solved
+
+#### **Challenge 1: Invalid Customer ID Handling**
+
+**Problem:** Sportsbar's order data contained invalid customer IDs like 'ABC987', 'INVALID', and other non-numeric values.
+
+**Solution:**
+```python
+df_orders = df_orders.withColumn(
+    "customer_id",
+    F.when(F.col("customer_id").rlike("^[0-9]+$"), F.col("customer_id"))
+     .otherwise("999999")
+     .cast("string")
+)
 ```
 
-Dimensions:
-dim_customer: Unified customer master (email-based matching)
-dim_product: Merged product catalog with category hierarchy
-dim_pricing: Cost and pricing tables
+**Result:** Clean customer dimension with all invalid IDs safely handled using placeholder value.
 
-Orchestration:
+---
+
+#### **Challenge 2: Multi-Format Date Standardization**
+
+**Problem:** `order_placement_date` arrived in 4 different formats:
+- `2025/07/01` (yyyy/MM/dd)
+- `01-07-2025` (dd-MM-yyyy)
+- `01/07/2025` (dd/MM/yyyy)
+- `Tuesday, July 01, 2025` (MMMM dd, yyyy with weekday prefix)
+
+**Solution:**
+```python
+# Remove weekday prefix
+df_orders = df_orders.withColumn(
+    "order_placement_date",
+    F.regexp_replace(F.col("order_placement_date"), r"^[A-Za-z]+,\s*", "")
+)
+
+# Parse multiple formats
+df_orders = df_orders.withColumn(
+    "order_placement_date",
+    F.coalesce(
+        F.try_to_date("order_placement_date", "yyyy/MM/dd"),
+        F.try_to_date("order_placement_date", "dd-MM-yyyy"),
+        F.try_to_date("order_placement_date", "dd/MM/yyyy"),
+        F.try_to_date("order_placement_date", "MMMM dd, yyyy")
+    )
+)
+```
+
+**Result:** 100% date parsing success across all formats.
+
+---
+
+#### **Challenge 3: Incremental Loading Pattern**
+
+**Problem:** Daily order files arrive in S3. Reprocessing all historical files daily wastes compute.
+
+**Solution:** Staging table pattern
+```python
+# 1. Read only new files from landing directory
+df = spark.read.csv(f"{landing_path}/*.csv")
+
+# 2. Write to staging (overwrites daily)
+df.write.mode("overwrite").saveAsTable(f"staging_{data_source}")
+
+# 3. Append to bronze (preserves history)
+df.write.mode("append").saveAsTable(bronze_table)
+
+# 4. Archive processed files
+dbutils.fs.mv(file_path, f"{processed_path}/{file_name}")
+```
+
+**Result:** 
+- Only new daily files processed (incremental approach)
+- Historical files archived to prevent reprocessing
+- Pipeline scales from 100 to 100K+ records/day without redesign
+
+---
+
+#### **Challenge 4: Dimension Table Upserts**
+
+**Problem:** Customer dimension needs updates when existing customers change while also inserting new customers.
+
+**Solution:** Delta Lake MERGE operation
+```python
+delta_table.alias("target").merge(
+    source=df_child_customers.alias("source"),
+    condition="target.customer_code = source.customer_code"
+).whenMatchedUpdateAll() \
+ .whenNotMatchedInsertAll() \
+ .execute()
+```
+
+**Result:** Idempotent upsert logic handling both inserts and updates in single operation.
+
+---
+
+
+**Orchestration:**
 
 <img src="Orchestration/jobrun.png" width="900">
 
-Key Technical Decisions
-
-Challenge 1: Customer ID Unification
-Problem: AtliQon uses numeric IDs (1001, 1002...), Sportsbar uses UUIDs
-Solution: Created unified_customer_key using MD5 hash of email address
-Result: 0 duplicate customers, 100% match rate
-
-Challenge 2: Incremental Loading Strategy
-Problem: Sportsbar generates daily order files; need to avoid reprocessing history
-Solution: Implemented date-based partitioning with idempotent append logic
-Result: Daily loads complete in <5 minutes
-
-Challenge 3: Product Hierarchy Mapping
-Problem: Sportsbar nutrition products don't fit AtliQon's equipment taxonomy
-Solution: Created new "Nutrition" category while preserving existing hierarchies
-Result: Enables cross-category analysis without disrupting existing reports
 
 
 ## <a id="key-results"></a>📈 Key Results
-Business Impact
-MetricResultTime to InsightsExecutive dashboard live within 3 weeks of acquisitionData ConsolidationUnified 2 disparate systems into single lakehouseReporting AutomationEliminated 40+ hours/week of manual Excel workStakeholder CoverageServed 5 business functions with dedicated dashboards
+### Business Impact
 
-Strategic Recommendations Delivered
+**Unified Analytics Platform:**
+- ✅ Consolidated AtliQon ($119.93B revenue) + Sportsbar data into single source of truth
+- ✅ Delivered 5 stakeholder-specific dashboards serving Executive, Finance, Sales, Marketing, Operations teams
+- ✅ Enabled cross-category analysis between sports equipment and nutrition products
+- ✅ Automated daily data refresh eliminating manual Excel consolidation
 
-🔹 Inventory Cross-Optimization
-Co-locate AtliQon equipment and Sportsbar nutrition products in warehouses to reduce last-mile delivery costs and improve delivery speed.
-🔹 Customer Loyalty Integration
-Launch "Athlete Rewards" program leveraging the 66% new customer acquisition rate, incentivizing cross-category purchases.
-🔹 Channel Expansion
-Invest in Direct and E-Commerce channels (currently 20% of revenue) using Sportsbar's digital-first playbook.
-🔹 Process Automation
-Expand pipeline to include real-time low-stock alerts, preventing stockouts during high-demand periods.
+**Data Integration Achievements:**
+- ✅ Processed 50K+ Sportsbar orders through Bronze → Silver → Gold layers
+- ✅ Merged nutrition product categories (Breakfast Foods, Dairy & Recovery, Hydration) into AtliQon's equipment taxonomy
+- ✅ Unified customer dimension supporting cross-company customer analysis
+- ✅ Created denormalized views enabling <2 second dashboard query response
 
+**Technical Implementation:**
+- ✅ Built incremental ETL pipeline with staging table pattern
+- ✅ Implemented data quality transformations handling invalid IDs, mixed date formats, duplicates
+- ✅ Used Delta Lake MERGE operations for dimension upsert logic
+- ✅ Enabled change data feed for audit tracking
+- ✅ Integrated with AWS S3 for automated file ingestion and archival
+
+### Strategic Insights Delivered
+
+**📊 Revenue Analysis:**
+- Retailer channel dominates revenue contribution
+- Top 5 customers represent significant revenue concentration
+- Nutrition products (Sportsbar) show growth opportunities alongside equipment
+
+**📈 Product Strategy:**
+- Cross-sell potential between equipment and nutrition categories identified
+- High-volume low-revenue products flagged for pricing review
+- Seasonal demand patterns documented for inventory planning
+
+**🎯 Channel Optimization:**
+- Platform mix: Brick & Mortar, E-Commerce, Sports Bar analyzed
+- Acquisition channel performance tracked for marketing ROI
+- Direct channel expansion opportunity identified
+
+**🚚 Operations Efficiency:**
+- Demand trends by category support inventory optimization
+- Seasonality patterns inform supply chain planning
+- High-volume products identified for warehouse co-location
 
 ## <a id="skills-demonstrated"></a>🎓 Skills Demonstrated
 Data Engineering
